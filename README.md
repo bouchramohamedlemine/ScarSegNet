@@ -1,16 +1,19 @@
-1# Introduction
+# Introduction
 
 
+---
 
 # Architecture 
 
 <img width="3878" height="1391" alt="Blank diagram (88)" src="https://github.com/user-attachments/assets/9f6abe17-a96b-4041-963e-ef9eacb22a4c" />
 
+---
+
 ## 2.1 ConvNeXt Encoder
 
 To mitigate overfitting and enhance both local and global representation learning, we adopt **ConvNeXt** [11], a hybrid architecture combining transformer-inspired design with CNN inductive biases, as the image encoder. The pretrained **ConvNeXt-Base** is adapted for single-channel MRI by replacing the initial $3 \times 3$ convolution with $1 \times 1$.
 
----
+
 
 ## 2.2 Adaptive Squeeze-and-Excitation (ASE) Module
 
@@ -33,7 +36,7 @@ The final attention mask combines local and contextual responses: $\psi = \sigma
 
 This dual-branch design improves segmentation of large, spatially diffuse scars without the overhead of global self-attention.
 
----
+ 
 
 ## 2.4 Myocardium-Constrained Loss (MCL)
 
@@ -41,11 +44,17 @@ Since scars are confined to the myocardium, we aim to make the model explicitly 
 
 Let $\mathbf{z}$ denote scar logits and $\mathbf{M}$ the myocardium mask. The constraint term is $\mathcal{L}_{\text{out}} = \frac{1}{HW} \sum\_{i,j} \sigma(z\_{i,j})(1 - M\_{i,j})$, where $\sigma(\cdot)$ is the sigmoid function. 
 
-The total loss is $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{bce}} + \mathcal{L}_{\text{dice}} + \mathcal{L}_{\text{out}}$. We experimented with different weighting combinations among these terms and found that equal weighting gives the most stable performance. This formulation explicitly constrains learning to the myocardium region from the beginning of training, enforcing anatomically consistent predictions without requiring a separate myocardium model.
+The total loss is $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{bce}} + \mathcal{L}_{\text{dice}} + \mathcal{L}_{\text{out}}$. 
 
+We experimented with different weighting combinations among these terms and found that equal weighting gives the most stable performance. This formulation explicitly constrains learning to the myocardium region from the beginning of training, enforcing anatomically consistent predictions without requiring a separate myocardium model.
+
+
+---
 
 # Results 
 
 
+
+---
 
 # References
