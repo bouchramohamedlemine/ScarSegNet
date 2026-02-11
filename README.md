@@ -44,7 +44,7 @@ Since scars are confined to the myocardium, we aim to make the model explicitly 
 
 Let $\mathbf{z}$ denote scar logits and $\mathbf{M}$ the myocardium mask. The constraint term is $\mathcal{L}_{\text{out}} = \frac{1}{HW} \sum\_{i,j} \sigma(z\_{i,j})(1 - M\_{i,j})$, where $\sigma(\cdot)$ is the sigmoid function. 
 
-The total loss is $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{bce}} + \mathcal{L}_{\text{dice}} + \mathcal{L}_{\text{out}}$. 
+The total loss is $\mathcal{L}_{\mathrm{total}} = \mathcal{L}_{\mathrm{bce}} + \mathcal{L}_{\mathrm{dice}} + \mathcal{L}_{\mathrm{out}}$.
 
 We experimented with different weighting combinations among these terms and found that equal weighting gives the most stable performance. This formulation explicitly constrains learning to the myocardium region from the beginning of training, enforcing anatomically consistent predictions without requiring a separate myocardium model.
 
