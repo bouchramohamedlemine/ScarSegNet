@@ -12,7 +12,7 @@ Cardiac magnetic resonance with late gadolinium enhancement (LGE-CMR) is the ref
 
 ## 2.1 ConvNeXt Encoder
 
-To mitigate overfitting and enhance both local and global representation learning, we adopt **ConvNeXt** [11], a hybrid architecture combining transformer-inspired design with CNN inductive biases, as the image encoder. The pretrained **ConvNeXt-Base** is adapted for single-channel MRI by replacing the initial $3 \times 3$ convolution with $1 \times 1$.
+To mitigate overfitting and enhance both local and global representation learning, we adopt **ConvNeXt** [1], a hybrid architecture combining transformer-inspired design with CNN inductive biases, as the image encoder. The pretrained **ConvNeXt-Base** is adapted for single-channel MRI by replacing the initial $3 \times 3$ convolution with $1 \times 1$.
 
 
 
