@@ -15,11 +15,11 @@ To mitigate overfitting and enhance both local and global representation learnin
 
 ## 2.2 Adaptive Squeeze-and-Excitation (ASE) Module
 
-The standard SE block [12] recalibrates channels using global average pooling (GAP), which suppresses sparse activations from subtle scars. We propose replacing GAP with an adaptive pooling mechanism inspired by **T-Max-Avg** [13], allowing each channel to learn an optimal trade-off between max and average pooling. This enhances sensitivity to localized scar activations without amplifying background noise.
+The standard SE block [12] recalibrates channels using global average pooling (GAP), which suppresses sparse activations from subtle scars. We propose replacing GAP with an adaptive pooling mechanism inspired by **T-Max-Avg** [13], allowing each channel to learn an optimal trade-off between max and average pooling. This enhances sensitivity to localised scar activations without amplifying background noise.
 
-For a feature map $x_c \in \mathbb{R}^{H \times W}$, the top-$k$ activations are selected as $\mathbf{v}_c = \mathrm{TopK}(x_c, k)$.
+For a feature map $x_c \in \mathbb{R}^{H \times W}$, the top-k activations are selected as $\mathbf{v}_c = \mathrm{TopK}(x_c, k)$.
 
-The gating mechanism produces a scalar pooled descriptor $z_c$ that summarizes the overall activation strength of channel $c$ after adaptive weighting between local (max) and global (average) responses: $z_c = g_c m_c + (1 - g_c) a_c$, where $m_c = \max(\mathbf{v}_c)$ and $a_c = (1/k) \sum_j v_{c,j}$.
+The gating mechanism produces a scalar pooled descriptor $z_c$ that summarizes the overall activation strength of channel $c$ after adaptive weighting between local (max) and global (average) responses: $z_c = g_c m_c + (1 - g_c) a_c$, where $m_c$ = \max(\mathbf{v}_c)$ and $a_c = (1/k) \sum_j v_{c,j}$.
 
 
 The gating variable is defined as $g_c = \sigma\left(\frac{\min(\mathbf{v}_c) - T}{\tau}\right)$ and is controlled by a learnable threshold $T = \sigma(\theta)$.
