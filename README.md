@@ -19,7 +19,7 @@ The standard SE block [12] recalibrates channels using global average pooling (G
 
 For a feature map $x_c \in \mathbb{R}^{H \times W}$, the top-k activations are selected as $\mathbf{v}_c = \mathrm{TopK}(x_c, k)$.
 
-The gating mechanism produces a scalar pooled descriptor $z_c$ that summarises the overall activation strength of channel $c$ after adaptive weighting between local (max) and global (average) responses: $z_c = g_c m_c + (1 - g_c) a_c$, where $m_c = \max(\mathbf{v}_c),\ a_c = \frac{1}{k} \sum_j v_{c,j}$.
+The gating mechanism produces a scalar pooled descriptor $z_c$ that summarises the overall activation strength of channel $c$ after adaptive weighting between local (max) and global (average) responses: $z_c = g_c m_c + (1 - g_c) a_c$, where $m_c = \max(v_c)$ and a_c = \frac{1}{k} \sum_j v_{c,j}$.
 
 
 The gating variable is defined as $g_c = \sigma\left(\frac{\min(\mathbf{v}_c) - T}{\tau}\right)$ and is controlled by a learnable threshold $T = \sigma(\theta)$.
