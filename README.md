@@ -39,13 +39,9 @@ This dual-branch design improves segmentation of large, spatially diffuse scars 
 
 Since scars are confined to the myocardium, we aim to make the model explicitly aware of where predictions are anatomically valid. Standard loss formulations provide only implicit spatial supervision, which may lead to false positives in regions outside the myocardium. Therefore, we introduce a **Myocardium-Constrained Loss (MCL)**, which penalises scar predictions outside the myocardium mask to ensure anatomically plausible segmentation.
 
-Let $\mathbf{z}$ denote scar logits and $\mathbf{M}$ the myocardium mask. The constraint term is $\mathcal{L}_{\text{out}} = \frac{1}{HW} \sum\_{i,j} \sigma(z\_{i,j})(1 - M\_{i,j})$, 
+Let $\mathbf{z}$ denote scar logits and $\mathbf{M}$ the myocardium mask. The constraint term is $\mathcal{L}_{\text{out}} = \frac{1}{HW} \sum\_{i,j} \sigma(z\_{i,j})(1 - M\_{i,j})$, where $\sigma(\cdot)$ is the sigmoid function. 
 
-where $\sigma(\cdot)$ is the sigmoid function.
-
-The total loss is $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{bce}} + \mathcal{L}_{\text{dice}} + \mathcal{L}_{\text{out}}$.
-
-We experimented with different weighting combinations among these terms and found that equal weighting gives the most stable performance. This formulation explicitly constrains learning to the myocardium region from the beginning of training, enforcing anatomically consistent predictions without requiring a separate myocardium model.
+The total loss is $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{bce}} + \mathcal{L}_{\text{dice}} + \mathcal{L}_{\text{out}}$. We experimented with different weighting combinations among these terms and found that equal weighting gives the most stable performance. This formulation explicitly constrains learning to the myocardium region from the beginning of training, enforcing anatomically consistent predictions without requiring a separate myocardium model.
 
 
 # Results 
