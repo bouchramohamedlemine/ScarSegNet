@@ -66,7 +66,7 @@ The total loss is $L_{\text{total}} = L_{\text{bce}} + L_{\text{dice}} + L_{\tex
 <img width="236" height="159" alt="Screenshot 2026-02-11 at 21 49 16" src="https://github.com/user-attachments/assets/91feded8-6a1d-406e-b0b2-056137aecdc9" />
 
 
-<br>
+<br><br><br>
 
 
 <img width="235" height="152" alt="Screenshot 2026-02-11 at 21 49 36" src="https://github.com/user-attachments/assets/73f32b15-b8b9-412b-b993-507fdc89ef2f" />
