@@ -75,21 +75,12 @@ The total loss is $L_{\text{total}} = L_{\text{bce}} + L_{\text{dice}} + L_{\tex
 
 ## References
 
-[1] Z. Liu, H. Mao, C.-Y. Wu, C. Feichtenhofer, T. Darrell, and S. Xie,  
-“A ConvNet for the 2020s,”  
-*Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)*, 2022, pp. 11976–11986.
+[1] Z. Liu, H. Mao, C.-Y. Wu, C. Feichtenhofer, T. Darrell, and S. Xie, “A ConvNet for the 2020s,” *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)*, 2022, pp. 11976–11986.
 
-[2] J. Hu, L. Shen, and G. Sun,  
-“Squeeze-and-Excitation Networks,”  
-*Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, 2018, pp. 7132–7141.
+[2] J. Hu, L. Shen, and G. Sun, “Squeeze-and-Excitation Networks,” *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, 2018, pp. 7132–7141.
 
-[3] L. Zhao and Z. Zhang,  
-“An Improved Pooling Method for Convolutional Neural Networks,”  
-*Scientific Reports*, vol. 14, no. 1, p. 1589, 2024.
+[3] L. Zhao and Z. Zhang, “An Improved Pooling Method for Convolutional Neural Networks,” *Scientific Reports*, vol. 14, no. 1, p. 1589, 2024.
 
-[4] J. Schlemper, O. Oktay, M. Schaap, M. Heinrich, B. Kainz,  
-B. Glocker, and D. Rueckert,  
-“Attention Gated Networks: Learning to Leverage Salient Regions in Medical Images,”  
-*arXiv preprint arXiv:1808.08114*, 2018.
+[4] J. Schlemper, O. Oktay, M. Schaap, M. Heinrich, B. Kainz, B. Glocker, and D. Rueckert, “Attention Gated Networks: Learning to Leverage Salient Regions in Medical Images,” *arXiv preprint arXiv:1808.08114*, 2018.
 
 
